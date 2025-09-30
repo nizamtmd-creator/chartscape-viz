@@ -1,4 +1,4 @@
-import logo from "@/assets/billing-logo.jpg";
+import logo from "@/assets/rbs-logo.jpg";
 
 const Header = () => {
   return (
@@ -7,12 +7,12 @@ const Header = () => {
         <div className="flex items-center gap-4">
           <img 
             src={logo} 
-            alt="Healthcare Billing Solutions Logo" 
+            alt="Reliable Business Services, LLC Logo" 
             className="h-12 w-auto object-contain"
           />
           <div>
             <h1 className="text-xl md:text-2xl font-bold text-primary">
-              Healthcare Billing Solutions
+              Reliable Business Services, LLC
             </h1>
             <p className="text-sm text-muted-foreground">
               Specialized Revenue Cycle Management
