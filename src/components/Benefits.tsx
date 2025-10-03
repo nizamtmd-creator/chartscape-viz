@@ -36,29 +36,29 @@ const benefits = [
 
 const Benefits = () => {
   return (
-    <section className="py-16 bg-gradient-to-b from-background to-muted/30">
+    <section className="py-8 bg-gradient-to-b from-background to-muted/30">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+        <div className="text-center mb-8">
+          <h2 className="text-2xl md:text-3xl font-bold mb-3 text-foreground">
             Why Choose Our Services?
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base text-muted-foreground max-w-2xl mx-auto">
             Comprehensive healthcare billing solutions designed to maximize your revenue
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {benefits.map((benefit, index) => (
             <Card 
               key={index}
-              className="p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-card border-border"
+              className="p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-card border-border"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center mb-6">
-                <benefit.icon className="w-7 h-7 text-white" />
+              <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center mb-4">
+                <benefit.icon className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-foreground">{benefit.title}</h3>
-              <p className="text-muted-foreground leading-relaxed">{benefit.description}</p>
+              <h3 className="text-lg font-semibold mb-2 text-foreground">{benefit.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{benefit.description}</p>
             </Card>
           ))}
         </div>

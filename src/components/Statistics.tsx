@@ -33,40 +33,40 @@ const paymentData = [
 
 const Statistics = () => {
   return (
-    <section className="py-16 bg-background">
+    <section className="py-8 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+        <div className="text-center mb-8">
+          <h2 className="text-2xl md:text-3xl font-bold mb-3 text-foreground">
             Proven Results
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base text-muted-foreground max-w-2xl mx-auto">
             Dramatic reduction in aging account receivables over 12 months
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-          <Card className="p-8 text-center bg-gradient-to-br from-primary to-primary-glow text-white">
-            <div className="text-5xl font-bold mb-2">94%</div>
-            <div className="text-lg opacity-90">Collection Rate</div>
-            <div className="text-sm opacity-75 mt-2">vs 75% industry standard</div>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+          <Card className="p-6 text-center bg-gradient-to-br from-primary to-primary-glow text-white">
+            <div className="text-4xl font-bold mb-2">94%</div>
+            <div className="text-base opacity-90">Collection Rate</div>
+            <div className="text-xs opacity-75 mt-1">vs 75% industry standard</div>
           </Card>
-          <Card className="p-8 text-center bg-gradient-to-br from-secondary to-accent text-white">
-            <div className="text-5xl font-bold mb-2">10-20%</div>
-            <div className="text-lg opacity-90">Revenue Increase</div>
-            <div className="text-sm opacity-75 mt-2">Without additional encounters</div>
+          <Card className="p-6 text-center bg-gradient-to-br from-secondary to-accent text-white">
+            <div className="text-4xl font-bold mb-2">10-20%</div>
+            <div className="text-base opacity-90">Revenue Increase</div>
+            <div className="text-xs opacity-75 mt-1">Without additional encounters</div>
           </Card>
-          <Card className="p-8 text-center bg-gradient-to-br from-accent to-secondary text-white">
-            <div className="text-5xl font-bold mb-2">24hrs</div>
-            <div className="text-lg opacity-90">Claim Filing</div>
-            <div className="text-sm opacity-75 mt-2">Fast turnaround time</div>
+          <Card className="p-6 text-center bg-gradient-to-br from-accent to-secondary text-white">
+            <div className="text-4xl font-bold mb-2">24hrs</div>
+            <div className="text-base opacity-90">Claim Filing</div>
+            <div className="text-xs opacity-75 mt-1">Fast turnaround time</div>
           </Card>
         </div>
 
-        <Card className="p-8 mb-8">
-          <h3 className="text-2xl font-semibold mb-6 text-foreground">
+        <Card className="p-6 mb-6">
+          <h3 className="text-xl font-semibold mb-4 text-foreground">
             Financial Summary: Aging Receivables Reduction
           </h3>
-          <ResponsiveContainer width="100%" height={400}>
+          <ResponsiveContainer width="100%" height={300}>
             <LineChart data={revenueData}>
               <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
               <XAxis dataKey="month" stroke="hsl(var(--muted-foreground))" />
@@ -102,11 +102,11 @@ const Statistics = () => {
           </p>
         </Card>
 
-        <Card className="p-8">
-          <h3 className="text-2xl font-semibold mb-6 text-foreground">
+        <Card className="p-6">
+          <h3 className="text-xl font-semibold mb-4 text-foreground">
             Payment Summary: 2022 vs 2023
           </h3>
-          <ResponsiveContainer width="100%" height={400}>
+          <ResponsiveContainer width="100%" height={300}>
             <BarChart data={paymentData}>
               <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
               <XAxis dataKey="month" stroke="hsl(var(--muted-foreground))" />
