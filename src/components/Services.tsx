@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { CheckCircle2 } from "lucide-react";
-import transitionImage from "@/assets/billing-logo.jpg";
+import transitionImage from "@/assets/billing-services.jpg";
 
 const services = [
   "Drove reduction errors and improved process accuracy, resulting in a 94% collection rate",
@@ -14,14 +14,14 @@ const services = [
 
 const Services = () => {
   return (
-    <section className="py-24 bg-muted/30">
+    <section className="py-16 bg-muted/30">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
             What We Offer
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Reliable Business Services, LLC provides healthcare practices with specialized complete Revenue Cycle Management
+            Diligent Management Solutions, LLC provides healthcare practices with specialized complete Revenue Cycle Management
           </p>
         </div>
 

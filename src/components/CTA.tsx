@@ -3,19 +3,19 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Phone, Mail, MapPin } from "lucide-react";
-import revenueImage from "@/assets/revenue-growth.jpg";
+import revenueImage from "@/assets/revenue-analytics.jpg";
 
 const CTA = () => {
   return (
-    <section className="py-24 bg-gradient-to-b from-background to-primary/5">
+    <section className="py-16 bg-gradient-to-b from-background to-primary/5">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
           <div>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
               Ready to Increase Your Revenue?
             </h2>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Switch to Reliable Business Services, LLC and see a 10-20% revenue increase with no increase in patient encounters.
+              Switch to Diligent Management Solutions, LLC and see a 10-20% revenue increase with no increase in patient encounters.
             </p>
             <div className="space-y-4">
               <div className="flex items-center gap-4">
@@ -66,7 +66,7 @@ const CTA = () => {
               <div>
                 <Textarea placeholder="Tell us about your billing needs..." className="bg-background min-h-32" />
               </div>
-              <Button className="w-full" size="lg">
+              <Button className="w-full shadow-lg hover:shadow-xl" size="lg">
                 Submit Request
               </Button>
             </form>
@@ -89,7 +89,7 @@ const CTA = () => {
             <p className="text-xl mb-8 opacity-90 max-w-3xl mx-auto">
               Experience the difference with our specialized Revenue Cycle Management solutions
             </p>
-            <Button size="lg" variant="secondary" className="text-lg">
+            <Button size="lg" variant="secondary" className="text-lg shadow-lg hover:shadow-xl">
               Schedule a Demo Today
             </Button>
           </div>

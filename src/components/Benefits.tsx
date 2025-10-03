@@ -36,9 +36,9 @@ const benefits = [
 
 const Benefits = () => {
   return (
-    <section className="py-24 bg-gradient-to-b from-background to-muted/30">
+    <section className="py-16 bg-gradient-to-b from-background to-muted/30">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
             Why Choose Our Services?
           </h2>

@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import heroImage from "@/assets/hero-billing.jpg";
+import heroImage from "@/assets/hero-management.jpg";
 
 const Hero = () => {
   return (
@@ -23,11 +23,11 @@ const Hero = () => {
             Specialized Revenue Cycle Management that increases your revenues by 10-20% with no increase in patient encounters
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button size="lg" variant="secondary" className="text-lg group">
+            <Button size="lg" variant="secondary" className="text-lg group shadow-lg hover:shadow-xl">
               Get Started
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button size="lg" variant="outline" className="text-lg bg-white/10 text-white border-white hover:bg-white hover:text-primary">
+            <Button size="lg" variant="outline" className="text-lg border-2 border-white/80 hover:bg-white hover:text-primary">
               Learn More
             </Button>
           </div>
