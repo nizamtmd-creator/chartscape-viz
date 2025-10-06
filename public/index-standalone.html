@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reliable Business Services - Healthcare Billing Solutions</title>
-    <meta name="description" content="Specialized Healthcare Revenue Cycle Management solutions that increase revenues by 10-20%. 94% collection rate with reduced billing errors and fast turnaround.">
-    <meta name="author" content="Reliable Business Services, LLC">
+    <title>Diligent Management Solutions, LLC - Healthcare Billing Solutions</title>
+    <meta name="description" content="Specialized Revenue Cycle Management that increases your revenues by 10-20% with no increase in patient encounters">
+    <meta name="author" content="Diligent Management Solutions, LLC">
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -13,37 +13,65 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
     
     <style>
         :root {
-            --primary-color: #0EA5E9;
-            --secondary-color: #06B6D4;
-            --accent-color: #10B981;
-            --dark-bg: #1E293B;
+            --primary-color: hsl(210, 85%, 45%);
+            --primary-foreground: hsl(0, 0%, 100%);
+            --primary-glow: hsl(210, 85%, 55%);
+            --secondary-color: hsl(195, 92%, 38%);
+            --secondary-foreground: hsl(0, 0%, 100%);
+            --accent-color: hsl(170, 75%, 38%);
+            --accent-foreground: hsl(0, 0%, 100%);
+            --background: hsl(220, 25%, 97%);
+            --foreground: hsl(222, 47%, 11%);
+            --card: hsl(0, 0%, 100%);
+            --card-foreground: hsl(222, 47%, 11%);
+            --muted: hsl(220, 14%, 91%);
+            --muted-foreground: hsl(220, 9%, 46%);
+            --border: hsl(220, 13%, 91%);
+            --dark-bg: hsl(222, 47%, 11%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--background);
+            color: var(--foreground);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         }
         
         .navbar-brand-text h1 {
             color: var(--primary-color);
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             margin: 0;
             font-weight: 700;
         }
         
         .navbar-brand-text p {
-            color: #6B7280;
+            color: var(--muted-foreground);
             font-size: 0.875rem;
             margin: 0;
         }
         
         .hero-section {
-            min-height: 90vh;
-            background: linear-gradient(135deg, rgba(14, 165, 233, 0.95), rgba(6, 182, 212, 0.9)), url('../src/assets/hero-billing.jpg');
+            min-height: 70vh;
+            background: linear-gradient(135deg, hsla(210, 85%, 45%, 0.95), hsla(195, 92%, 38%, 0.9)), url('../src/assets/hero-management.jpg');
             background-size: cover;
             background-position: center;
             color: white;
@@ -58,44 +86,61 @@
             bottom: 0;
             left: 0;
             right: 0;
-            height: 8rem;
-            background: linear-gradient(to top, white, transparent);
+            height: 5rem;
+            background: linear-gradient(to top, var(--background), transparent);
         }
         
         .benefit-card {
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             height: 100%;
-            border: 1px solid #E5E7EB;
+            border: 1px solid var(--border);
+            background: var(--card);
+            padding: 1.5rem;
+            border-radius: 0.75rem;
         }
         
         .benefit-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px -10px rgba(0, 0, 0, 0.15);
         }
         
         .benefit-icon {
-            width: 56px;
-            height: 56px;
-            border-radius: 8px;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            width: 3rem;
+            height: 3rem;
+            border-radius: 0.75rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-glow));
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 1.75rem;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
         }
         
         .stat-card {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 2rem;
-            border-radius: 8px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            border-radius: 0.75rem;
             text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px -8px rgba(0, 0, 0, 0.12);
         }
         
         .stat-number {
-            font-size: 3rem;
+            font-size: 1.875rem;
             font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.25rem;
+        }
+        
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--muted-foreground);
         }
         
         .chart-container {
@@ -104,43 +149,74 @@
         }
         
         .process-step {
-            padding: 1rem;
-            border-radius: 8px;
-        }
-        
-        .process-step h4 {
+            padding: 0.75rem;
+            border-radius: 0.5rem;
             margin-bottom: 0.5rem;
         }
         
+        .process-step h4 {
+            margin-bottom: 0.125rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+        
+        .process-step p {
+            font-size: 0.75rem;
+            color: var(--muted-foreground);
+            margin: 0;
+        }
+        
         .cta-banner {
-            background: linear-gradient(135deg, rgba(14, 165, 233, 0.9), rgba(6, 182, 212, 0.85)), url('../src/assets/revenue-growth.jpg');
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
-            padding: 3rem;
-            border-radius: 8px;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            text-align: center;
         }
         
         footer {
             background-color: var(--dark-bg);
-            color: white;
+            color: var(--background);
+            padding: 3rem 0;
         }
         
         .check-icon {
             color: var(--accent-color);
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             flex-shrink: 0;
+            margin-top: 0.125rem;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+        
+        @media (min-width: 768px) {
+            .section-title {
+                font-size: 1.875rem;
+            }
+        }
+        
+        .section-subtitle {
+            font-size: 1rem;
+            color: var(--muted-foreground);
+        }
+        
+        .section-py {
+            padding: 2rem 0;
         }
     </style>
 </head>
 <body>
     <!-- Header -->
     <nav class="navbar navbar-light bg-white border-bottom sticky-top">
-        <div class="container">
+        <div class="container py-2">
             <div class="d-flex align-items-center gap-3">
-                <img src="../src/assets/rbs-logo.jpg" alt="Reliable Business Services, LLC Logo" height="48" class="d-inline-block">
+                <img src="../src/assets/dms-logo.jpg" alt="Diligent Management Solutions, LLC Logo" height="48" class="d-inline-block">
                 <div class="navbar-brand-text">
-                    <h1>Reliable Business Services, LLC</h1>
+                    <h1>Diligent Management Solutions, LLC</h1>
                     <p>Specialized Revenue Cycle Management</p>
                 </div>
             </div>
@@ -152,13 +228,13 @@
         <div class="container" style="position: relative; z-index: 10;">
             <div class="row">
                 <div class="col-lg-8">
-                    <h1 class="display-3 fw-bold mb-4">Healthcare Billing Solutions</h1>
-                    <p class="lead fs-4 mb-4">Specialized Revenue Cycle Management that increases your revenues by 10-20% with no increase in patient encounters</p>
+                    <h1 style="font-size: 1.875rem; font-weight: 700; margin-bottom: 1rem;">Healthcare Billing Solutions</h1>
+                    <p style="font-size: 1.125rem; margin-bottom: 1.5rem; opacity: 0.9;">Specialized Revenue Cycle Management that increases your revenues by 10-20% with no increase in patient encounters</p>
                     <div class="d-flex flex-column flex-sm-row gap-3">
-                        <button class="btn btn-light btn-lg">
+                        <button class="btn btn-light" style="font-size: 1rem; padding: 0.625rem 1.25rem;">
                             Get Started <i class="bi bi-arrow-right ms-2"></i>
                         </button>
-                        <button class="btn btn-outline-light btn-lg">Learn More</button>
+                        <button class="btn btn-outline-light" style="font-size: 1rem; padding: 0.625rem 1.25rem; border: 2px solid rgba(255,255,255,0.8);">Learn More</button>
                     </div>
                 </div>
             </div>
@@ -166,71 +242,41 @@
     </section>
 
     <!-- Benefits Section -->
-    <section class="py-5 bg-light">
-        <div class="container py-5">
-            <div class="text-center mb-5">
-                <h2 class="display-4 fw-bold mb-3">Why Choose Our Services?</h2>
-                <p class="lead text-muted">Comprehensive healthcare billing solutions designed to maximize your revenue</p>
+    <section class="section-py" style="background-color: var(--background);">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2 class="section-title">Why Choose Us</h2>
+                <p class="section-subtitle">Experience the advantages of partnering with Diligent Management Solutions</p>
             </div>
             
             <div class="row g-4">
-                <div class="col-md-6 col-lg-4">
-                    <div class="card benefit-card p-4">
-                        <div class="benefit-icon mb-3">
-                            <i class="bi bi-currency-dollar"></i>
-                        </div>
-                        <h3 class="h5 fw-semibold mb-3">Improved Cash Flow</h3>
-                        <p class="text-muted">Optimize your revenue cycle with faster claim processing and reduced payment delays</p>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-4">
-                    <div class="card benefit-card p-4">
-                        <div class="benefit-icon mb-3">
-                            <i class="bi bi-people"></i>
-                        </div>
-                        <h3 class="h5 fw-semibold mb-3">Enhanced Patient Satisfaction</h3>
-                        <p class="text-muted">Streamlined billing processes create better experiences for your patients</p>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-4">
-                    <div class="card benefit-card p-4">
-                        <div class="benefit-icon mb-3">
-                            <i class="bi bi-bullseye"></i>
-                        </div>
-                        <h3 class="h5 fw-semibold mb-3">Reduced Billing Errors</h3>
-                        <p class="text-muted">94% collection rate compared to industry standard of 75%</p>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-4">
-                    <div class="card benefit-card p-4">
-                        <div class="benefit-icon mb-3">
-                            <i class="bi bi-bar-chart"></i>
-                        </div>
-                        <h3 class="h5 fw-semibold mb-3">Data Analytics and Reporting</h3>
-                        <p class="text-muted">Comprehensive insights into your revenue cycle performance</p>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-4">
-                    <div class="card benefit-card p-4">
-                        <div class="benefit-icon mb-3">
+                <div class="col-md-4">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
                             <i class="bi bi-graph-up-arrow"></i>
                         </div>
-                        <h3 class="h5 fw-semibold mb-3">Increased Revenue Generation</h3>
-                        <p class="text-muted">10-20% revenue increase without additional patient encounters</p>
+                        <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem;">Increase Revenue</h3>
+                        <p style="font-size: 0.875rem; color: var(--muted-foreground);">Boost your practice revenue by 10-20% without adding more patient encounters through our specialized management approach.</p>
                     </div>
                 </div>
                 
-                <div class="col-md-6 col-lg-4">
-                    <div class="card benefit-card p-4">
-                        <div class="benefit-icon mb-3">
-                            <i class="bi bi-diagram-3"></i>
+                <div class="col-md-4">
+                    <div class="benefit-card">
+                        <div class="benefit-icon" style="background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));">
+                            <i class="bi bi-shield-check"></i>
                         </div>
-                        <h3 class="h5 fw-semibold mb-3">Process Standardization</h3>
-                        <p class="text-muted">Efficient workflows optimized for maximum productivity</p>
+                        <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem;">Reduce Errors</h3>
+                        <p style="font-size: 0.875rem; color: var(--muted-foreground);">Minimize billing errors and maximize collection rates with our proven 94% collection rate and expert coding.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="benefit-card">
+                        <div class="benefit-icon" style="background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));">
+                            <i class="bi bi-clock-history"></i>
+                        </div>
+                        <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem;">Save Time</h3>
+                        <p style="font-size: 0.875rem; color: var(--muted-foreground);">Focus on patient care while we handle the complexities of billing, claims processing, and revenue cycle management.</p>
                     </div>
                 </div>
             </div>
@@ -238,46 +284,52 @@
     </section>
 
     <!-- Statistics Section -->
-    <section class="py-5">
-        <div class="container py-5">
-            <div class="text-center mb-5">
-                <h2 class="display-4 fw-bold mb-3">Proven Results</h2>
-                <p class="lead text-muted">Real performance metrics from our clients</p>
+    <section class="section-py" style="background: linear-gradient(to bottom, var(--background), rgba(255, 255, 255, 0.5));">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2 class="section-title">Our Results Speak for Themselves</h2>
+                <p class="section-subtitle">Proven track record of improving healthcare practice revenues</p>
             </div>
             
-            <div class="row g-4 mb-5">
-                <div class="col-md-4">
+            <div class="row g-4 mb-4">
+                <div class="col-md-3 col-6">
                     <div class="stat-card">
                         <div class="stat-number">94%</div>
-                        <div class="fs-5">Collection Rate</div>
+                        <div class="stat-label">Collection Rate</div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3 col-6">
                     <div class="stat-card">
                         <div class="stat-number">10-20%</div>
-                        <div class="fs-5">Revenue Increase</div>
+                        <div class="stat-label">Revenue Increase</div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3 col-6">
                     <div class="stat-card">
                         <div class="stat-number">24hrs</div>
-                        <div class="fs-5">Claim Filing Time</div>
+                        <div class="stat-label">Claim Turnaround</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-card">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Compliance Rate</div>
                     </div>
                 </div>
             </div>
             
             <div class="row g-4">
                 <div class="col-lg-6">
-                    <div class="card p-4">
-                        <h3 class="h5 fw-semibold mb-4">Aging Receivables Comparison</h3>
+                    <div class="card p-4" style="border: 1px solid var(--border); border-radius: 0.75rem;">
+                        <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem;">Revenue Trends</h3>
                         <div class="chart-container">
                             <canvas id="revenueChart"></canvas>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="card p-4">
-                        <h3 class="h5 fw-semibold mb-4">Payment Summary</h3>
+                    <div class="card p-4" style="border: 1px solid var(--border); border-radius: 0.75rem;">
+                        <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem;">Payment Summary</h3>
                         <div class="chart-container">
                             <canvas id="paymentChart"></canvas>
                         </div>
@@ -288,65 +340,65 @@
     </section>
 
     <!-- Services Section -->
-    <section class="py-5 bg-light">
-        <div class="container py-5">
-            <div class="text-center mb-5">
-                <h2 class="display-4 fw-bold mb-3">What We Offer</h2>
-                <p class="lead text-muted">Reliable Business Services, LLC provides healthcare practices with specialized complete Revenue Cycle Management</p>
+    <section class="section-py" style="background-color: rgba(220, 229, 234, 0.3);">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2 class="section-title">What We Offer</h2>
+                <p class="section-subtitle">Diligent Management Solutions, LLC provides healthcare practices with specialized complete Revenue Cycle Management</p>
             </div>
             
             <div class="row g-4">
                 <div class="col-lg-6">
-                    <div class="card p-4">
-                        <h3 class="h5 fw-semibold mb-4">Our Services Include:</h3>
+                    <div class="card p-4" style="border: 1px solid var(--border); background: var(--card); border-radius: 0.75rem;">
+                        <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1.5rem;">Our Services Include:</h3>
                         <div class="d-flex gap-3 mb-3">
                             <i class="bi bi-check-circle-fill check-icon"></i>
-                            <p class="mb-0">Drove reduction errors and improved process accuracy, resulting in a 94% collection rate</p>
+                            <p class="mb-0" style="font-size: 0.875rem; color: var(--muted-foreground);">Drove reduction errors and improved process accuracy, resulting in a 94% collection rate</p>
                         </div>
                         <div class="d-flex gap-3 mb-3">
                             <i class="bi bi-check-circle-fill check-icon"></i>
-                            <p class="mb-0">Skilled in optimizing complex billing processes, collaborating with providers and stakeholders</p>
+                            <p class="mb-0" style="font-size: 0.875rem; color: var(--muted-foreground);">Skilled in optimizing complex billing processes, collaborating with providers and stakeholders</p>
                         </div>
                         <div class="d-flex gap-3 mb-3">
                             <i class="bi bi-check-circle-fill check-icon"></i>
-                            <p class="mb-0">Delivered strategic support for Surgery Center billing operations</p>
+                            <p class="mb-0" style="font-size: 0.875rem; color: var(--muted-foreground);">Delivered strategic support for Surgery Center billing operations</p>
                         </div>
                         <div class="d-flex gap-3 mb-3">
                             <i class="bi bi-check-circle-fill check-icon"></i>
-                            <p class="mb-0">Medical Billing Professionals fully trained in Medicare, Medicaid, and Workers Compensation regulations</p>
+                            <p class="mb-0" style="font-size: 0.875rem; color: var(--muted-foreground);">Medical Billing Professionals fully trained in Medicare, Medicaid, and Workers Compensation regulations</p>
                         </div>
                         <div class="d-flex gap-3 mb-3">
                             <i class="bi bi-check-circle-fill check-icon"></i>
-                            <p class="mb-0">Accurate code selection the first time to minimize resubmissions and denials</p>
+                            <p class="mb-0" style="font-size: 0.875rem; color: var(--muted-foreground);">Accurate code selection the first time to minimize resubmissions and denials</p>
                         </div>
                         <div class="d-flex gap-3 mb-3">
                             <i class="bi bi-check-circle-fill check-icon"></i>
-                            <p class="mb-0">Fast turnaround time - claims filed within 24 hours of receiving data</p>
+                            <p class="mb-0" style="font-size: 0.875rem; color: var(--muted-foreground);">Fast turnaround time - claims filed within 24 hours of receiving data</p>
                         </div>
                         <div class="d-flex gap-3">
                             <i class="bi bi-check-circle-fill check-icon"></i>
-                            <p class="mb-0">Quality, personalized service via dedicated Account Managers</p>
+                            <p class="mb-0" style="font-size: 0.875rem; color: var(--muted-foreground);">Quality, personalized service via dedicated Account Managers</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="col-lg-6">
-                    <div class="card p-4">
-                        <h3 class="h5 fw-semibold mb-4 text-center">Our Transition Process</h3>
-                        <div class="text-center mb-4">
-                            <img src="../src/assets/billing-logo.jpg" alt="Transition Process Diagram" class="img-fluid rounded">
+                    <div class="card p-4" style="border: 1px solid var(--border); background: var(--card); border-radius: 0.75rem;">
+                        <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; text-align: center;">Our Transition Process</h3>
+                        <div class="text-center mb-3">
+                            <img src="../src/assets/billing-services.jpg" alt="Billing Services Transition" class="img-fluid rounded">
                         </div>
-                        <div class="process-step mb-3" style="background-color: rgba(14, 165, 233, 0.05);">
-                            <h4 class="h6 fw-semibold" style="color: var(--primary-color);">Complete Transition</h4>
-                            <p class="small text-muted mb-0">Comprehensive planning and pilot runs</p>
+                        <div class="process-step" style="background-color: hsla(210, 85%, 45%, 0.05);">
+                            <h4 style="color: var(--primary-color);">Complete Transition</h4>
+                            <p>Comprehensive planning and pilot runs</p>
                         </div>
-                        <div class="process-step mb-3" style="background-color: rgba(6, 182, 212, 0.05);">
-                            <h4 class="h6 fw-semibold" style="color: var(--secondary-color);">Migration Process</h4>
-                            <p class="small text-muted mb-0">Seamless systems and resource assignment</p>
+                        <div class="process-step" style="background-color: hsla(195, 92%, 38%, 0.05);">
+                            <h4 style="color: var(--secondary-color);">Migration Process</h4>
+                            <p>Seamless systems and resource assignment</p>
                         </div>
-                        <div class="process-step" style="background-color: rgba(16, 185, 129, 0.05);">
-                            <h4 class="h6 fw-semibold" style="color: var(--accent-color);">Technology Framework</h4>
-                            <p class="small text-muted mb-0">Implementation with key benchmarks</p>
+                        <div class="process-step" style="background-color: hsla(170, 75%, 38%, 0.05);">
+                            <h4 style="color: var(--accent-color);">Technology Framework</h4>
+                            <p>Implementation with key benchmarks</p>
                         </div>
                     </div>
                 </div>
@@ -355,33 +407,39 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="py-5">
-        <div class="container py-5">
-            <div class="row g-4">
+    <section class="section-py" style="background: linear-gradient(to bottom, var(--background), hsla(210, 85%, 45%, 0.05));">
+        <div class="container">
+            <div class="row g-4 mb-4">
                 <div class="col-lg-6">
-                    <h2 class="display-5 fw-bold mb-4">Ready to Increase Your Revenue?</h2>
-                    <p class="lead mb-4">Join healthcare providers who have increased their revenue by 10-20% with our specialized billing solutions.</p>
+                    <h2 class="section-title" style="text-align: left;">Ready to Increase Your Revenue?</h2>
+                    <p style="font-size: 1rem; color: var(--muted-foreground); margin-bottom: 1.5rem;">Switch to Diligent Management Solutions, LLC and see a 10-20% revenue increase with no increase in patient encounters.</p>
                     
-                    <div class="mb-4">
+                    <div>
                         <div class="d-flex align-items-center gap-3 mb-3">
-                            <i class="bi bi-telephone-fill fs-4" style="color: var(--primary-color);"></i>
+                            <div style="width: 2.5rem; height: 2.5rem; border-radius: 50%; background-color: hsla(210, 85%, 45%, 0.1); display: flex; align-items: center; justify-content: center;">
+                                <i class="bi bi-telephone-fill" style="color: var(--primary-color);"></i>
+                            </div>
                             <div>
-                                <div class="fw-semibold">Call Us</div>
-                                <div class="text-muted">(555) 123-4567</div>
+                                <div style="font-size: 0.875rem; font-weight: 600;">Phone</div>
+                                <div style="font-size: 0.75rem; color: var(--muted-foreground);">Contact us for consultation</div>
                             </div>
                         </div>
                         <div class="d-flex align-items-center gap-3 mb-3">
-                            <i class="bi bi-envelope-fill fs-4" style="color: var(--primary-color);"></i>
+                            <div style="width: 2.5rem; height: 2.5rem; border-radius: 50%; background-color: hsla(195, 92%, 38%, 0.1); display: flex; align-items: center; justify-content: center;">
+                                <i class="bi bi-envelope-fill" style="color: var(--secondary-color);"></i>
+                            </div>
                             <div>
-                                <div class="fw-semibold">Email Us</div>
-                                <div class="text-muted">info@reliablebusiness.com</div>
+                                <div style="font-size: 0.875rem; font-weight: 600;">Email</div>
+                                <div style="font-size: 0.75rem; color: var(--muted-foreground);">Get in touch with our team</div>
                             </div>
                         </div>
                         <div class="d-flex align-items-center gap-3">
-                            <i class="bi bi-geo-alt-fill fs-4" style="color: var(--primary-color);"></i>
+                            <div style="width: 2.5rem; height: 2.5rem; border-radius: 50%; background-color: hsla(170, 75%, 38%, 0.1); display: flex; align-items: center; justify-content: center;">
+                                <i class="bi bi-geo-alt-fill" style="color: var(--accent-color);"></i>
+                            </div>
                             <div>
-                                <div class="fw-semibold">Visit Us</div>
-                                <div class="text-muted">123 Business St, Suite 100</div>
+                                <div style="font-size: 0.875rem; font-weight: 600;">Location</div>
+                                <div style="font-size: 0.75rem; color: var(--muted-foreground);">Serving healthcare providers nationwide</div>
                             </div>
                         </div>
                     </div>
@@ -423,25 +481,25 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-5">
+    <footer style="background-color: var(--dark-bg); color: var(--background); padding: 3rem 0;">
         <div class="container">
             <div class="row g-4 mb-4">
                 <div class="col-md-4">
-                    <h3 class="h4 fw-bold mb-3">Reliable Business Services, LLC</h3>
-                    <p class="opacity-75">Specialized Healthcare Billing Solutions and Revenue Cycle Management</p>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">Diligent Management Solutions, LLC</h3>
+                    <p style="opacity: 0.8;">Specialized Healthcare Billing Solutions and Revenue Cycle Management</p>
                 </div>
                 <div class="col-md-4">
-                    <h4 class="h6 fw-semibold mb-3">Quick Links</h4>
-                    <ul class="list-unstyled opacity-75">
-                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">About Us</a></li>
-                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Services</a></li>
-                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Results</a></li>
-                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Contact</a></li>
+                    <h4 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem;">Quick Links</h4>
+                    <ul class="list-unstyled" style="opacity: 0.8;">
+                        <li class="mb-2"><a href="#" style="color: var(--background); text-decoration: none;">About Us</a></li>
+                        <li class="mb-2"><a href="#" style="color: var(--background); text-decoration: none;">Services</a></li>
+                        <li class="mb-2"><a href="#" style="color: var(--background); text-decoration: none;">Results</a></li>
+                        <li class="mb-2"><a href="#" style="color: var(--background); text-decoration: none;">Contact</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4">
-                    <h4 class="h6 fw-semibold mb-3">Services</h4>
-                    <ul class="list-unstyled opacity-75">
+                    <h4 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem;">Services</h4>
+                    <ul class="list-unstyled" style="opacity: 0.8;">
                         <li class="mb-2">Revenue Cycle Management</li>
                         <li class="mb-2">Medical Billing</li>
                         <li class="mb-2">Claims Processing</li>
@@ -449,8 +507,8 @@
                     </ul>
                 </div>
             </div>
-            <div class="border-top border-secondary pt-4 text-center opacity-75">
-                <p class="mb-0">&copy; 2025 Reliable Business Services, LLC. All rights reserved.</p>
+            <div style="border-top: 1px solid rgba(255,255,255,0.2); padding-top: 2rem; text-center; opacity: 0.8;">
+                <p class="mb-0">&copy; 2025 Diligent Management Solutions, LLC. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -468,10 +526,10 @@
                 labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
                 datasets: [
                     {
-                        label: '2023',
-                        data: [45000, 42000, 48000, 51000, 49000, 47000, 50000, 52000, 55000, 53000, 57000, 60000],
-                        borderColor: '#0EA5E9',
-                        backgroundColor: 'rgba(14, 165, 233, 0.1)',
+                        label: '2024',
+                        data: [65000, 72000, 68000, 80000, 85000, 90000, 92000, 95000, 98000, 102000, 105000, 110000],
+                        borderColor: 'hsl(210, 85%, 45%)',
+                        backgroundColor: 'hsla(210, 85%, 45%, 0.1)',
                         tension: 0.4,
                         fill: true
                     },
