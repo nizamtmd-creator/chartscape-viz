@@ -93,15 +93,17 @@
         .benefit-card {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             height: 100%;
-            border: 1px solid var(--border);
+            border: 2px solid var(--primary-color);
             background: var(--card);
             padding: 1.5rem;
             border-radius: 0.75rem;
+            box-shadow: 0 4px 15px -3px rgba(33, 150, 243, 0.1);
         }
         
         .benefit-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 12px 40px -10px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 12px 40px -10px rgba(33, 150, 243, 0.3);
+            border-color: var(--primary-glow);
         }
         
         .benefit-icon {
@@ -211,7 +213,7 @@
 </head>
 <body>
     <!-- Header -->
-    <nav class="navbar navbar-light bg-white border-bottom sticky-top">
+    <nav class="navbar navbar-light bg-white border-bottom sticky-top" style="border-top: 2px solid var(--primary-color) !important;">
         <div class="container py-2">
             <div class="d-flex align-items-center gap-3">
                 <img src="../src/assets/dms-logo.jpg" alt="Diligent Management Solutions, LLC Logo" height="48" class="d-inline-block">
